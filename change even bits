@@ -1,0 +1,28 @@
+#incldue<stdio.h>
+int reverse_even (unsigned int n)
+{
+    int i,tmp;
+    int rn;
+    for(i=0; i<32; i+=2)
+    {
+       tmp = n & (1<<i);
+       if(tmp)
+           n = n ^ (1<<i);
+    }
+    return n;
+}
+int main()
+{
+int t,i;
+unsigned int n[100];
+unsigned int rn;
+scanf("%d\n",&t);
+for(i=0 ; i<t ; i++)
+{
+    rn=0;
+    scanf("%d\n",&n[i]);
+    rn = reverse_even(n[i]);
+    printf("%d\n",rn);
+}
+return 0;
+}
